@@ -1,0 +1,54 @@
+:root {
+    --header_font: 'oswald Font', sans serif;
+    --text_font: 'Source Sans3', sans serif;
+    --Text_details_font: 'roboto', sans serif;
+}
+
+
+
+
+@font-face {
+    font-family: 'Header Font';
+    src: url('fonts/converted-fonts-oswald/Oswald-Bold.woff2') format('woff');
+    font-weight: 700px;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Header Font';
+    src: url('fonts/converted-fonts-oswald/Oswald-Regular.woff2') format('woff');
+    font-weight: 400px;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Text Font';
+    src: url('fonts/converted-fonts-roboto/RobotoSlab-Bold.woff2') format('woff');
+    font-weight: 700px;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Text Detail Font';
+    src: url('fonts/converted-fonts-roboto/RobotoSlab-Regular.woff2') format('woff');
+    font-weight: 400px;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Text Detail Font';
+    src: url('fonts/converted-fonts-sourcesans3/SourceSans3-Bold.woff2') format('woff');
+    font-weight: 700px;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Text Font';
+    src: url('fonts/converted-fonts-sourcesans3/SourceSans3-Regular.woff2') format('woff');
+    font-weight: 400px;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
