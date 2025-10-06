@@ -64,8 +64,8 @@ main {
 }
 
 .header_container {
-    height: 120px;
-    background-color: var(--weight);
+    height: 180px;
+    background-color: var(--darkgrey);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,11 +83,46 @@ h1 {
     color: var(--orange);
 }
 
+h3{
+    font-family: var(--font_header);
+    font-weight: 400;
+    font-size: 40px;
+    color: var(--darkgrey);
+    padding: 10px 0;
+}
+
+h4{
+    font-family: var(--font_header);
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--darkgrey);
+    padding: 6px 0;
+}
 p{
     font-family: var(--font_text);
     font-weight: 400;
-    font-size: 24px;
+    font-size: 26px;
 }
+li {
+    font-family: var(--font_text);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--darkgrey);
+    padding: 8px;
+}
+a {
+    font-family: var(--font_text);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--orange);
+}
+.datenschutz {
+    padding: 20px 100px;
+}
+.impressum {
+    padding: 20px 100px;
+}
+
 .marquee_container {
     overflow: hidden;/*Alles, was über den Container hinausgeht, wird abgeschnitten.*/
     background-color: var(--lightgrey);
@@ -120,21 +155,23 @@ p{
 }
 
 .footer_container {
-    height: 150px;
+    height: 180px;
     background-color: var(--darkgrey);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 120px;
-    gap: 32px;
+    justify-content: space-around;
 }
+footer {
+    display: flex;
+}
+
 .logo {
     width: 400px;
     object-fit: contain;
-    display: block;
+
 }
 .logo_footer {
-    width: 180px;
+    width: 250px;
     object-fit: contain;
 }
 
@@ -145,8 +182,7 @@ p{
 }
 
 .social_media_group {
-    display: flex;
-    justify-content: space-around;
+    gap: 10px;
 }
 
 .flex_box {
@@ -158,8 +194,6 @@ p{
 }
 
 .gallery_item {
-    display: block;
-    overflow: hidden;
     border-radius: 8px;
     margin-bottom: 1em;
     position: relative;/* Macht die Kachel zu einem Container für Hover-Effekte */
@@ -171,7 +205,7 @@ p{
 .gallery_item img {
     width: 200px;
     height: 200px;
-    display: block;
+   
     cursor: pointer;
     object-fit: cover;
 }
@@ -194,53 +228,44 @@ p{
 
 
 
-.lightbox_modal {
-    border: none;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
+.dialogbox_modal {
+    background-color: rgba(0, 0, 0, 0.877);
+    width: 100%;
+    height: 100%;
     }
 
-.lightbox_modal::backdrop {
+.dialogbox_modal::backdrop {
     background-color: rgba(0, 0, 0, 0.095);
     transition: background 0.03s ease-in-out;
 }
 
-#lightbox_content {
+#dialogbox_content {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    max-width: 90%;
-    max-height: 90%;
-    position: relative;
+    justify-content: center;
 }
 
-#lightbox_image {
-    display: block;
-    max-width: 100%;
-    max-height: 80vh;
-    height: auto;
+#dialogbox_image {
     border: 5px solid white;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .close_button { /*Positioniert den Button absolut zur*/ 
     position: fixed; /* Jetzt fixed, um oben rechts im Viewport zu bleiben */
-    top: 15px;
-    right: 35px;
+    top: 35px;
+    right: 100px;
     background: none;
     border: none;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
+    color: var(--orange);
+    font-size: 137px;
+    font-weight: 400;
     cursor: pointer;
-    transition: 0.03s;
-    z-index: 1001; /*Über dem backdrop*/
+    
 }
-#lightbox_close:hover {
+#dialogbox_close:hover {
     color: var(--lightgrey)
 }
-#lightbox_caption {
+#dialogbox_caption {
     color: white;
     font-size: 1.1rem;
     padding-top: 10px;
@@ -248,9 +273,27 @@ p{
     max-width: 90%;
 }
 
+.links{
+    font-family: var(--font_text);
+    font-weight: 400;
+    font-size: 28px;
+    gap: 10px;
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
 
+.links:hover {
+    text-decoration: underline 2px solid;
+    text-underline-offset: 6px;
+    color: var(--orange);
+}
 
-
+.nav_link {
+    display: flex;
+    gap: 25px;
+    padding-top: 100px;
+}
 
 
 

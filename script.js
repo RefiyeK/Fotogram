@@ -46,9 +46,9 @@ let galleryHTML = ''; // Leerer String, um den gesamten HTML-Code zu speichern
 
 
    
-   const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightbox_image');
-const lightboxCaption = document.getElementById('lightbox_caption');
+   const dialogbox = document.getElementById('dialogbox');
+const dialogboxImage = document.getElementById('dialogbox_image');
+const dialogboxCaption = document.getElementById('dialogbox_caption');
 
 
 
@@ -67,17 +67,18 @@ images.forEach(image => {
     
     galleryImages.forEach(image => {
     image.addEventListener('click', () => {
-            lightboxImage.src = image.src; 
-            lightboxCaption.textContent = image.dataset.caption;
-            lightbox.showModal(); //Öffnet das Dialog-Element als Modal    
+            dialogboxImage.src = image.src; 
+            dialogboxCaption.textContent = image.dataset.caption;
+            dialogbox.showModal(); //Öffnet das Dialog-Element als Modal    
         });
         });
-//Schließen über das Drücken der ESC-Taste ist jetzt automatisch.
 
-//Jetzt kommt schließen über Klick auf den Hintergrund
-    lightbox.addEventListener('click', (e) => { //überprüft, ob du das Dialog-Element selbst geklickt wurde(Hintergrund)
-        if (e.target.id === 'lightbox') {
-            lightbox.close();
-        }
-    }); 
+
+    const dialogRef = document.getElementById("myDialog")
+    function openDialog(){
+        dialogRef.showModal();
+    }
+    function closeDialog(){
+        dialogRef.closest();
+    }
 });
