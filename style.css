@@ -1,49 +1,193 @@
 :root {
-    --header_font: 'oswald Font', sans serif;
-    --text_font: 'Source Sans3', sans serif;
-    --Text_details_font: 'roboto', sans serif;
+    --lightgrey: #f9f9f9;
+    --darkgrey: #333;
+    --blue: #4A90E2;
+    --orange: #FF8A00;
+    --lightyellow: #FFC72C;
+    --weight: #ffffff;
+    --font_header: 'Oswald', sans serif;
+    --font_text: 'Roboto Slab', sans serif;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Oswald';
+    src: url(./fonts/converted-fonts-oswald/Oswald-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: bold;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Oswald';
+    src: url(./fonts/converted-fonts-oswald/Oswald-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family:'RobotoSlab';
+    src: url(./fonts/converted-fonts-roboto/RobotoSlab-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: bold;
+}
+
+@font-face {
+    font-display: swap;
+    font-family:'RobotoSlab';
+    src: url(./fonts/converted-fonts-roboto/RobotoSlab-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    max-width: 1920px;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+    padding: 0 120px;
+}
+
+.header_container {
+    height: 120px;
+    background-color: var(--weight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+}
+
+h1 {
+    font-family: var(--font_header);
+    font-weight: 700;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    padding: 45px;
+    margin-right: 220px;
+    color: var(--orange);
+}
+
+p{
+    font-family: var(--font_text);
+    font-weight: 400;
+    font-size: 24px;
+}
+.marquee_container {
+    overflow: hidden;/*Alles, was über den Container hinausgeht, wird abgeschnitten.*/
+    background-color: var(--lightgrey);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: var(--orange);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.marquee_text {
+    display: inline-block; /*Damit der text nicht umbricht und als eine Linie behandelt wird*/
+    animation: scroll-allways 30s linear infinite;
+}
+
+@keyframes scroll-allways {
+    from{
+        transform: translateX(100vw);/*Schieb den Text um die gesamte Breite des Viewports (sichtbaren Bereichsnach rehcts.*/
+        }
+    to {
+        transform: translateX(-100%);/*Endposition- Bewegt den Text um 100% seiner eigenen Breite nach links*/
+
+        }
+    
+}
+
+.header_line{
+    position: relative;
+    border: 1px solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: rgba(197, 196, 196, 0.267);
+}
+
+.footer_container {
+    height: 150px;
+    background-color: var(--darkgrey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+}
+.logo {
+    width: 400px;
+
+}
+.logo_footer {
+    width: 150px;
+}
+
+
+.gallery_grid {
+    column-count: 5; /* Definiert, dass die Inhalte in 4 Spalten aufgeteilt werden sollen */
+    column-gap: 1em; /* Fügt einen sauberen Abstand (Gap) zwischen den Spalten hinzu */
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: masonry;
+}
+.gallery_item {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    position: relative;/* Macht die Kachel zu einem Container für Hover-Effekte */
+    break-inside: avoid;/* Verhindert, dass eine Kachel (das Element) in der Mitte getrennt wird */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery_item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery_item .caption {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--darkgrey);
+    background-color: var(--lightgrey);
+    margin: 0;
+}
+
+.gallery_item:hover .caption {
+    background-color: var(--orange);
+    color: white;
+    opacity: 1;
 }
 
 
 
 
-@font-face {
-    font-family: 'Header Font';
-    src: url('fonts/converted-fonts-oswald/Oswald-Bold.woff2') format('woff');
-    font-weight: 700px;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Header Font';
-    src: url('fonts/converted-fonts-oswald/Oswald-Regular.woff2') format('woff');
-    font-weight: 400px;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'Text Font';
-    src: url('fonts/converted-fonts-roboto/RobotoSlab-Bold.woff2') format('woff');
-    font-weight: 700px;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Text Detail Font';
-    src: url('fonts/converted-fonts-roboto/RobotoSlab-Regular.woff2') format('woff');
-    font-weight: 400px;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Text Detail Font';
-    src: url('fonts/converted-fonts-sourcesans3/SourceSans3-Bold.woff2') format('woff');
-    font-weight: 700px;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Text Font';
-    src: url('fonts/converted-fonts-sourcesans3/SourceSans3-Regular.woff2') format('woff');
-    font-weight: 400px;
-    font-style: normal;
-}
+
+
+
+
+
+
 
 
 

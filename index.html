@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fotogram</title>
+    <link rel="icon" sizes="32x32" href="./favicon/favicon.svg">
+    <link rel="stylesheet" href="./style.css"> 
 </head>
+
+
+
 <body>
-    
+
+
+    <header class="container">
+        <section class="header_container">    
+            <a href="index.html">
+                <img class="logo" src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo">
+            </a>
+        </section>    
+        
+        <div class="header_line"></div>
+        <div class="marquee_container">
+            <h1 class="marquee_text">Galerie der Augenblicke</h1>
+            <p class="marquee_text"> Viel Spaß beim Anschauen </p>
+        </div>
+    </header>
+
+
+
+
+    <main class="container">
+        <div id="gallery-container" class="gallery_grid">    
+        </div>
+        
+    </main>
+
+    <div id="lightbox">
+         <div id="lightbox-content">
+                <img id="lightbox-image" src="" alt="Vergrößertes Bild">
+             <span id="lightbox-close">&times;</span> 
+            </div>
+    </div>
+
+    <footer class="container" >
+        <section class="footer_container">
+           <div> <a class="logo_footer" href="index.html">
+                <img src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo Footer">
+                </a>
+            </div>
+        </section>
+    </footer>
+   
+
+<script src="./script.js"></script>
 </body>
 </html>
