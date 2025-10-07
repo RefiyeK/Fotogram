@@ -6,13 +6,13 @@
     <title>Fotogram</title>
     <link rel="icon" sizes="32x32" href="./favicon/favicon.svg">
     <link rel="stylesheet" href="./style.css"> 
+    <script src="./script.js" defer></script>
 </head>
 
 
 
-<body>
-
-
+<body onload="startGallery()">
+    
     <header>
         <section class="header_container">    
             <a href="index.html">
@@ -24,29 +24,20 @@
             </nav>
         </section>    
         
-        <div class="header_line"></div>
+        <div  class="header_line"></div>
         <div class="marquee_container">
             <h1 class="marquee_text">Galerie der Augenblicke</h1>
             <p class="marquee_text"> Viel Spaß beim Anschauen </p>
         </div>
     </header>
 
-
-
-
-
-
-
     <main>
-        <div id="gallery_container" class="flex_box" aria-haspopup="dialog" aria-controls="myDialog" onclick="openDialog()">
-             
-        </div>
         
+        <div id="gallery_container"> 
 
-       
-    
+        </div>
 
-        <dialog id="dialogbox" class="dialogbox_modal" aria-labelledby="dialogTitle" aria-describedby="dialogDescr">
+        <dialog id="myDialog" class="dialogbox_modal" aria-labelledby="dialogTitle" aria-describedby="dialogDescr">
             <div id="dialogbox_content" >
                 <img id="dialogbox_image" src="" alt="" caption="">    
                 <form method="dialog">
@@ -57,13 +48,7 @@
     
         </dialog>
     </main>
-
-
-
-
-
-
-
+ 
 
     <footer class="footer_container">
       
@@ -87,6 +72,6 @@
     </footer>
    
 
-<script src="./script.js"></script>
+
 </body>
 </html>

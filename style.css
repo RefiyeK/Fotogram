@@ -185,7 +185,7 @@ footer {
     gap: 10px;
 }
 
-.flex_box {
+#gallery_container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
