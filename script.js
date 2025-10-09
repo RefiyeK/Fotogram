@@ -1,7 +1,9 @@
 'use strict'
 
-//array von Fotos erstellen (den Pfad angabe)
-const myImages = [
+
+
+//Variable als Array erstellen wo wir unsere Bilder speichen
+const MYIMAGES = [
     "img/art-hippie-van-flowers.jpg",         
     "img/nature-multnomah-waterfall.jpg",          
     "img/asia-buddha-temple.jpg",            
@@ -31,148 +33,163 @@ const myImages = [
     "img/nature-stone-circle-hills.jpg",       
     "img/orange-balloons-blue-sky.jpg",    
     "img/people-couple-kiss-sunset.jpg",      
-    "img/sea-cave-beach-entrance.jpg",    
+    "img/sea-cave-beach-entrance.jpg",
     "img/travel-vietnam-golden-bridge.jpg",   
     "img/travel-zanzibar-rock-restaurant.jpg",   
     "img/tropical-beach-waves-tree.jpg",          
     "img/venice-bridge-of-sighs-boat.jpg"  
 ];
 
+const MYIMAGESCAPTION = [
+    "Art Hippie Van Flowers",
+    "multnomah Waterfall Bridge",
+    "Buddha Statue Temple",
+    "Tropical Beach View",
+    "Beachs Palm Chairs",
+    "Cozy Christmas Room",
+    "Ölüdeniz Beach Turkey",
+    "Cinque Terre Colorful Hiuses",
+    "Trondheim Houses Water",
+    "City Transport path",
+    "Book Imagination Open",
+    "Frog Relaxing Chair",
+    "Frog Travel luggage",
+    "Brown butterfly Leaf",
+    "Frog sitting on a tropical leaf",
+    "Floating Green Leaf",
+    "Frogs Beach party",
+    "Navagio Beach Greece",
+    "Hand Holding Old Book",
+    "Egyptian Hieroglyphs Wall",
+    "Soumaya Museum Mexico",
+    "Black and White Lighthouse",
+    "Alpine Lake Village",
+    "Waterfall nature View",
+    "Mossy Tree Avenue Path",
+    "Huge Angel Oak Tree",
+    "Green landscape Stones",
+    "Orange Ballons Sky",
+    "Couple kissing Sunset",
+    "Sea Cave Entrance",
+    "Golden Bridge Vietnam",
+    "Rock Restaurant Zanzibar",
+    "Tropical Beach Waves Tree",
+    "Venice Canal Bridge"
+];
 
-// const myAltImages = [ 
-//     "Art Hippie Van Flowers",
-//     "multnomah Waterfall Bridge",
-//     "Buddha Statue Temple",
-//     "Tropical Beach View",
-//     "Beachs Palm Chairs",
-//     "Cozy room decorated fro Chrismus",
-//     "Ölüdeniz Beach Turkey",
-//     "Cinque Terre Colorful Hiuses",
-//     "Trondheim Houses Water",
-//     "City Transport Path",
-//     "Book Imagination Open",
-//     "Frog Relaxing Chair",
-//     "Frog Travel luggage",
-//     "Brown butterfly Leaf",
-//     "A bright green frog sitting on a tropical leaf",
-//     "Floating Green Leaf",
-//     "Frogs Beach party",
-//     "Navagio Beach Greece",
-//     "Hand Holding Old Book",
-//     "Egyptian Hieroglyphs Wall",
-//     "Soumaya Museum Mexico",
-//     "Black and White Lighthouse",
-//     "Alpine Lake Village",
-//     "Waterfall nature View",
-//     "Mossy Tree Avenue Path",
-//     "Huge Angel Oak Tree",
-//     "Green landscape Stones",
-//     "Orange Ballons Sky",
-//     "Couple kissing Sunset",
-//     "Sea Cave Entrance",
-//     "Golden Bridge Vietnam",
-//     "Rock Restaurant Zanzibar",
-//     "Tropical Beach Waves Tree",
-//     "Venice Canal Bridge"
-// ];
-
-
-// const myCaptionImages = [
-//     "Art Hippie Van Flowers",
-//     "multnomah Waterfall Bridge",
-//     "Buddha Statue Temple",
-//     "Tropical Beach View",
-//     "Beachs Palm Chairs",
-//     "Cozy Christmas Room",
-//     "Ölüdeniz Beach Turkey",
-//     "Cinque Terre Colorful Hiuses",
-//     "Trondheim Houses Water",
-//     "City Transport path",
-//     "Book Imagination Open",
-//     "Frog Relaxing Chair",
-//     "Frog Travel luggage",
-//     "Brown butterfly Leaf",
-//     "Frog sitting on a tropical leaf",
-//     "Floating Green Leaf",
-//     "Frogs Beach party",
-//     "Navagio Beach Greece",
-//     "Hand Holding Old Book",
-//     "Egyptian Hieroglyphs Wall",
-//     "Soumaya Museum Mexico",
-//     "Black and White Lighthouse",
-//     "Alpine Lake Village",
-//     "Waterfall nature View",
-//     "Mossy Tree Avenue Path",
-//     "Huge Angel Oak Tree",
-//     "Green landscape Stones",
-//     "Orange Ballons Sky",
-//     "Couple kissing Sunset",
-//     "Sea Cave Entrance",
-//     "Golden Bridge Vietnam",
-//     "Rock Restaurant Zanzibar",
-//     "Tropical Beach Waves Tree",
-//     "Venice Canal Bridge"
-// ];
+const MYIMAGESALT = [ 
+    "Art Hippie Van Flowers",
+    "multnomah Waterfall Bridge",
+    "Buddha Statue Temple",
+    "Tropical Beach View",
+    "Beachs Palm Chairs",
+    "Cozy room decorated fro Chrismus",
+    "Ölüdeniz Beach Turkey",
+    "Cinque Terre Colorful Hiuses",
+    "Trondheim Houses Water",
+    "City Transport Path",
+    "Book Imagination Open",
+    "Frog Relaxing Chair",
+    "Frog Travel luggage",
+    "Brown butterfly Leaf",
+    "A bright green frog sitting on a tropical leaf",
+    "Floating Green Leaf",
+    "Frogs Beach party",
+    "Navagio Beach Greece",
+    "Hand Holding Old Book",
+    "Egyptian Hieroglyphs Wall",
+    "Soumaya Museum Mexico",
+    "Black and White Lighthouse",
+    "Alpine Lake Village",
+    "Waterfall nature View",
+    "Mossy Tree Avenue Path",
+    "Huge Angel Oak Tree",
+    "Green landscape Stones",
+    "Orange Ballons Sky",
+    "Couple kissing Sunset",
+    "Sea Cave Entrance",
+    "Golden Bridge Vietnam",
+    "Rock Restaurant Zanzibar",
+    "Tropical Beach Waves Tree",
+    "Venice Canal Bridge"
+];
 
 
-document.getElementById("gallery_container").innerhtml = myImages;
+let currentImageIndex = 0;
 
-function initArrays(){
-console.log(myImages);
+function init() {
+    renderImage();
 }
 
-
-
-// let startGallery= document.getElementById('gallery_container');
-// startGallery = myImages;
-
-// function startGallery (){
-//     const galleryContainer = document.getElementById('gallery_container');
-//     let galleryHTML= '';
-//     let amountGalleryImages = myImages.length;
-// }
-
-// for (let i = 0; i <= myImages.lenght; i++){
-
-// const img = myImages[i];
-// const alt = myAltImages[i];
-// const caption = myCaptionImages[i];
-
-// galleryHTML +=  `
-//         <div class="gallery_items">
-//             <img src="${img}" alt="${alt}" data-caption="${caption}">
-//             <p class="caption">${caption}</p>
-//         </div>
-//         `;
-// }
-
-// const dialogImage = document.getElementById("dialogbox_image");
-// const dialogCaption = document.getElementById("dialogbox_caption");
-// const galleryContainer = document.getElementById("gallery_container");
-
+function renderImage() {
+    const container = document.getElementById("galleryContainer");
+    let imagesHTML = '';
     
-
-
-
-
-
-const dialogRef = document.getElementById("myDialog")
-    function openDialog(){                      
-        
-        dialogRef.showModal();
+    for(let i = 0; i < MYIMAGES.length; i++) {
+        imagesHTML += `
+            <img src="${MYIMAGES[i]}" 
+                 alt="${MYIMAGESALT[i]}" 
+                 class="galleryContainer"
+                 onclick="openDialog(${i})">
+        `;
     }
-    function closeDialog(){
-        dialogRef.close();
-    }
-   
-
-
     
+    container.innerHTML = imagesHTML;
+}
+
+function openDialog(index) {
+    currentImageIndex = index;
+    
+    document.getElementById('dialogImage').src = MYIMAGES[index];
+    document.getElementById('dialogbox_caption').textContent = MYIMAGESCAPTION[index];
+    
+    document.getElementById('myDialog').showModal();
+}
+
+// Klick auf Hintergrund schließt Dialog
+document.getElementById('myDialog').onclick = function(event) {
+    //Sucht das Dialog-Element mit der ID "myDialog" 
+    //Sagt: "Wenn auf dieses Element geklickt wird, dann..." Startet eine Funktion, die den Klick (event) bekommt
+
+        if (event.target === document.getElementById('myDialog')) {
+//"Ist diese Bedingung wahr?" 
+// Das Element, auf das tatsächlich geklickt wurde Ist es genau dasselbe Element?" 
+// Nochmal das Dialog-Element" Also: "Wurde genau auf das Dialog-Element selbst geklickt?"
+            closeDialog();
+        }
+
+    }
 
 
-//Startfunktion/init erstellen im Body aufrufen
-// Funktion die Bilder rendert (für die miniatur ansicht)
-//Funktion dialog öffnen und die dialog schließt
-//Funktion für next Image
-//Funktion für vorherige Bild
-//
+
+function closeDialog() {
+    document.getElementById('myDialog').close();
+}
+
+function nextImage() {
+    if (currentImageIndex === MYIMAGES.length - 1) {
+        // Beim letzten Bild: gehe zurück zum ersten Bild (Index 0)
+        currentImageIndex = 0;
+    } else {
+        // Ansonsten: gehe zum nächsten Bild
+        currentImageIndex = currentImageIndex + 1;
+    }
+    updateDialog();
+}
+
+function previousImage() {
+    if (currentImageIndex === 0) {
+        // Beim ersten Bild: gehe zum letzten Bild
+        currentImageIndex = MYIMAGES.length - 1;
+    } else {
+        // Ansonsten: gehe zum vorherigen Bild
+        currentImageIndex = currentImageIndex - 1;
+    }
+    updateDialog();
+}
+
+function updateDialog() {
+    document.getElementById('dialogImage').src = MYIMAGES[currentImageIndex];
+    document.getElementById('dialogbox_caption').textContent = MYIMAGESCAPTION[currentImageIndex];
+}
+

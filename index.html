@@ -6,72 +6,92 @@
     <title>Fotogram</title>
     <link rel="icon" sizes="32x32" href="./favicon/favicon.svg">
     <link rel="stylesheet" href="./style.css"> 
-    <script src="./script.js" defer></script>
+    
 </head>
 
 
-
-<body onload="startGallery()">
+<body onload="init()">
     
     <header>
         <section class="header_container">    
-            <a href="index.html">
-                <img class="logo" src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo">
+            
+            <a href="index.html" class="logo">
+                <img  src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo">
             </a>
+                <a href="index.html" class="logo_small">
+                <img  src="./favicon/favicon.svg" alt="Fotogram Logo Small">
+            </a>
+        
             <nav class="nav_link">
                 <a class="links" href="impressum.html">Impressum</a>
                 <a class="links" href="datenschutz.html">Datenschutz</a>
             </nav>
         </section>    
         
-        <div  class="header_line"></div>
-        <div class="marquee_container">
-            <h1 class="marquee_text">Galerie der Augenblicke</h1>
-            <p class="marquee_text"> Viel Spaß beim Anschauen </p>
+        
+        <div>
+            <h1>Galerie der Augenblicke</h1>
         </div>
+        <div class="header_line"></div>
     </header>
 
     <main>
         
-        <div id="gallery_container"> 
-
+        <div id="galleryContainer"> 
+            
         </div>
 
-        <dialog id="myDialog" class="dialogbox_modal" aria-labelledby="dialogTitle" aria-describedby="dialogDescr">
-            <div id="dialogbox_content" >
-                <img id="dialogbox_image" src="" alt="" caption="">    
-                <form method="dialog">
-                    <button aria-label="dialogbox_close" class="close_button" onclick="closeDialog()">&times</button> 
-                </form>
-                <p id="dialogbox_caption"></p>
-            </div>
-    
+        <dialog id="myDialog" class="dialogbox_modal" onclick="closeDialog()" aria-labelledby="dialogTitle" aria-describedby="dialogDescr" >
+                <div id="dialogbox_content" >
+                    
+                    <button class="arrow-button arrow-left" onclick="previousImage()" aria-label="Vorheriges Bild">     
+                        <img class="arrow_left" src="./img/arrow-left.png" alt="">
+                    </button>    
+                    
+                        <img id="dialogImage" src="" alt="" class="dialog_image">    
+
+                    <button class="arrow-button arrow-right" onclick="nextImage()" aria-label="Nächstes Bild">
+                        <img class="arrow_right" src="./img/arrow-right.png" alt="">
+                    </button>
+                    
+                    <form method="dialog">
+                        <button class="close_button" onclick="closeDialog()" aria-label="Dialog schließen">&times;</button> 
+                    </form>
+                    <p id="dialogbox_caption"></p>
+                </div>
         </dialog>
+    
+        
     </main>
  
 
     <footer class="footer_container">
       
         
-                <a  href="index.html">
-                    <img class="logo_footer" src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo Footer">
+                <a  href="index.html" class="logo">
+                    <img  src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo Footer">
                 </a>
+
+                <a href="index.html" class="logo_small">
+                   <img  src="./favicon/favicon.svg" alt="Fotogram Logo Small">
+                 </a>
             
-            <nav class="nav_link">
-                <a class="links" href="impressum.html">Impressum</a>
-                <a class="links" href="datenschutz.html">Datenschutz</a>
-            </nav>
+            <div class="footer_links">    
+                <nav class="nav_link">
+                    <a class="links" href="impressum.html">Impressum</a>
+                    <a class="links" href="datenschutz.html">Datenschutz</a>
+                </nav>
 
 
-            <div class="social_media_group"><
-                <a href="https://facebook.com"><img class="social_media" src="./img/facebook_white.png" alt="Facebook Logo"></a>
-                <a href="https://instagram.com"><img class="social_media" src="./img/instagram_white.png" alt="Instagram Logo"></a>
-                <a href="https://x.com"><img class="social_media" src="./img/x-logo-white.png" alt="X Logo"></a>
-            </div>
-      
+                <div class="social_media_group">
+                    <a href="https://facebook.com"><img class="social_media" src="./img/facebook_white.png" alt="Facebook Logo"></a>
+                    <a href="https://instagram.com"><img class="social_media" src="./img/instagram_white.png" alt="Instagram Logo"></a>
+                    <a href="https://x.com"><img class="social_media" src="./img/x-logo-white.png" alt="X Logo"></a>
+                </div>
+            </div>    
     </footer>
    
 
-
+<script src="script.js"></script>
 </body>
 </html>

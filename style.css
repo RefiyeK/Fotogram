@@ -79,8 +79,8 @@ h1 {
     display: flex;
     justify-content: center;
     padding: 45px;
-    margin-right: 220px;
     color: var(--orange);
+    background-color: var(--lightgrey);
 }
 
 h3{
@@ -115,6 +115,7 @@ a {
     font-size: 18px;
     font-weight: 400;
     color: var(--orange);
+    text-align: center;
 }
 .datenschutz {
     padding: 20px 100px;
@@ -123,53 +124,34 @@ a {
     padding: 20px 100px;
 }
 
-.marquee_container {
-    overflow: hidden;/*Alles, was über den Container hinausgeht, wird abgeschnitten.*/
-    background-color: var(--lightgrey);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    color: var(--orange);
-    border-radius: 5px;
-    margin-bottom: 30px;
-    gap: 10px;
-}
-
-.marquee_text {
-    display: inline-block; /*Damit der text nicht umbricht und als eine Linie behandelt wird*/
-    animation: scroll-allways 30s linear infinite;
-}
-
-@keyframes scroll-allways {
-    from{
-        transform: translateX(100vw);/*Schieb den Text um die gesamte Breite des Viewports (sichtbaren Bereichsnach rehcts.*/
-        }
-    to {
-        transform: translateX(-100%);/*Endposition- Bewegt den Text um 100% seiner eigenen Breite nach links*/
-        } 
-}
-
-.header_line{
-    position: relative;
-    border: 1px solid;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: rgba(197, 196, 196, 0.267);
-}
-
 .footer_container {
     height: 180px;
     background-color: var(--darkgrey);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 120px;
 }
 footer {
     display: flex;
 }
 
+.footer_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 88px;
+}
 .logo {
     width: 400px;
     object-fit: contain;
-
 }
+.logo_small {
+    display: none;
+}
+
 .logo_footer {
     width: 250px;
     object-fit: contain;
@@ -185,93 +167,145 @@ footer {
     gap: 10px;
 }
 
-#gallery_container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    
-}
-
-.gallery_item {
-    border-radius: 8px;
-    margin-bottom: 1em;
-    position: relative;/* Macht die Kachel zu einem Container für Hover-Effekte */
-    break-inside: avoid;/* Verhindert, dass eine Kachel (das Element) in der Mitte getrennt wird */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
-}
-
-.gallery_item img {
-    width: 200px;
-    height: 200px;
-   
+.galleryContainer {
     cursor: pointer;
+    max-width: 200px;
+    height: auto;
+    margin: 5px;
+   
+}
+
+.galleryContainer:hover {
+    transform: scale(1.05);
+    transition: transform 1.5s; 
+}
+
+
+#galleryContainer img {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 30px;
     object-fit: cover;
 }
 
-.gallery_item .caption {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-    color: var(--darkgrey);
-    background-color: var(--lightgrey);
-    margin: 0;
-}
 
-.gallery_item:hover .caption {
-    background-color: var(--orange);
-    color: white;
-    opacity: 1;
+
+
+img:hover {
     cursor: pointer;
-}
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+   
+} 
 
-
+/* Stile für mein Dialogfenster */
 
 .dialogbox_modal {
-    background-color: rgba(0, 0, 0, 0.877);
-    width: 100%;
-    height: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 0px;
+    max-width: 90vw;
+    max-height: 90vh;
+    max-width: 1000px;
+    max-height: 800px;
+    margin: auto;
     }
 
 .dialogbox_modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.095);
-    transition: background 0.03s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.dialogbox_modal:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+ 
+#dialogbox_content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--darkgrey);
 }
 
-#dialogbox_content {
+#dialogImage {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+#dialogbox_caption {
+    font-size: 22px;
+    margin: 15px;
+    padding: 0.5rem;
+    color: white;
+}
+
+
+
+
+/* #dialogboxImage {
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+} */
+
+.close_button { /*Positioniert den Button absolut zur*/ 
+    position: absolute; /* Jetzt fixed, um oben rechts im Viewport zu bleiben */
+    top: 10px;
+    right: 10px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 40px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#dialogbox_image {
-    border: 5px solid white;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-.close_button { /*Positioniert den Button absolut zur*/ 
-    position: fixed; /* Jetzt fixed, um oben rechts im Viewport zu bleiben */
-    top: 35px;
-    right: 100px;
-    background: none;
-    border: none;
-    color: var(--orange);
-    font-size: 137px;
-    font-weight: 400;
-    cursor: pointer;
     
 }
-#dialogbox_close:hover {
-    color: var(--lightgrey)
+
+/* Pfeil-Buttons */
+.arrow-button {
+    position: absolute;
+    top: 95%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
 }
-#dialogbox_caption {
-    color: white;
-    font-size: 1.1rem;
-    padding-top: 10px;
-    text-align: center;
-    max-width: 90%;
+
+.arrow-button:hover {
+    background: white;
 }
+
+.arrow-left {
+    height: 43px;
+    width: 43px;
+    left: 20px;
+}
+
+.arrow_left {
+   height: 45px;
+    width: 45px;
+}
+
+.arrow-right {
+    height: 43px;
+    width: 43px;
+    right: 20px;
+}
+
+.arrow_right{
+    height: 45px;
+    width: 45px;    
+}
+
 
 .links{
     font-family: var(--font_text);
@@ -295,8 +329,105 @@ footer {
     padding-top: 100px;
 }
 
+@media(max-width:1000px) {
+    .logo {
+        width: 300px;
+    }
+    .links {
+        font-size: 24px;
+        gap: 5px;
+    }
+}
 
+@media(max-width:900px) {
+    .logo {
+        width: 250px;
+    }
+    .logo_footer {
+        width: 200px;
+    }
+    .nav_link {
+        font-size: 20px;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
+}
 
+@media(max-width:760px) {
+    h1 {
+        font-size: 48px;
+    }
+}
 
+@media(max-width:760px) {
+    .logo {
+        display: none;
+    }
+    .logo_small {
+        display: block;
+        width: 50px;
+       height: 50px;
+       object-fit: cover;
+    }
+     .footer_container {
+        padding: 0 60px;
+    }
 
+}
+
+@media(max-width:600px) {
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .header_container {
+        padding: 0 60px;
+    }
+    .footer_container {
+        padding: 0 60px;
+    }
+    .links {
+        font-size: 16px;
+        gap: 10px;
+    }
+    .nav_link {
+        gap: 10px
+    }
+    .logo_footer {
+        width: 150px;
+    }
+    .social_media {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media(max-width:400px) {
+    #datenschutz_h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+@media(max-width:380px) {
+    main {
+        padding: 0 20px;
+    }
+    .header_container {
+        padding: 0 35px;
+    }
+    .impressum {
+    padding: 20px 40px;
+}
+}
+
+@media(max-width:350px){
+
+    h3 {
+      font-size: 32px;  
+    }
+
+}
