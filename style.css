@@ -80,12 +80,18 @@ footer {
 .container_limit {
     max-width: 1920px; 
     margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .footer_flexbox {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.liste {
+    padding-left: 15px;
 }
 
 h1 {
@@ -181,6 +187,7 @@ a {
     width: 250px;
     height: 150px;
     object-fit: contain;
+    display: block;
 }
 
 .social_media {
