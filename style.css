@@ -143,12 +143,12 @@ a {
     text-align: left;
 }
 
-.containerDatenschutz {
+.container_datenschutz {
     padding-bottom: 250px;
 }
 
-.impressum {
-    padding: 20px 100px;
+.container_impressum {
+    padding-bottom: 250px;
 }
 
 footer {
