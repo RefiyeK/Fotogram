@@ -56,7 +56,6 @@ body {
 }
 
 main {
-    padding: 50px 120px;
     flex: 1;
 }
 
@@ -81,7 +80,6 @@ footer {
 .container_limit {
     max-width: 1920px; 
     margin: 0 auto;
-    padding: 0 120px;
 }
 
 .footer_flexbox {
@@ -91,6 +89,17 @@ footer {
 }
 
 h1 {
+    font-family: var(--font_header);
+    font-weight: 700;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    padding: 45px;
+    color: var(--orange);
+    background-color: white;
+}
+
+.impressum_h1 {
     font-family: var(--font_header);
     font-weight: 700;
     font-size: 64px;
@@ -139,24 +148,23 @@ a {
     text-align: center;
 }
 
+.impressum_textmain{
+    text-align: left;
+}
 .datenschutz {
     text-align: left;
 }
 
 .container_datenschutz {
-    padding-bottom: 250px;
+    padding-bottom: 150px;
 }
 
 .container_impressum {
-    padding-bottom: 250px;
+    padding-bottom: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-  
 .logo {
     width: 250px;
     height: 150px;
@@ -243,9 +251,10 @@ footer {
 }
 
 #dialogImage {
-    max-width: 85%;
-    max-height: 85%;
+    width: 85%;
+    height: 80%;
     object-fit: contain;
+    object-position: center;
 }
 
 #dialogbox_caption {
@@ -331,6 +340,8 @@ footer {
     }
     .container_limit {
         padding: 0 100px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
     .link {
         font-size: 20px;
@@ -383,12 +394,13 @@ footer {
     .footer_flexbox{
         padding-top: 50px;
     }    
+    h1 {
+        font-size: 50px;
+    }
 }
 
 @media(max-width:800px) {
-    h1 {
-        font-size: 48px;
-    }
+   
     .container_limit {
         padding: 0 75px;
     }
@@ -412,11 +424,11 @@ footer {
         gap: 10px;
     }
     .container_limit {
-        padding:10px;
+        padding:18px;
     }
 }
 
-@media(max-width:651px) {
+@media(max-width:660px) {
     .logo_footer {
         display: none;
 }
@@ -428,13 +440,14 @@ footer {
         display: flex;
         align-items: center;
     }
-}
-
-@media(max-width:600px) {
     h1 {
         font-size: 40px;
         text-align: center;
     }
+}
+
+@media(max-width:600px) {
+
     .header_container {
         padding: 0 60px;
     }
@@ -464,6 +477,9 @@ footer {
      overflow-wrap: break-word;
      max-width: 100%;       
     }
+     .container_limit {
+        padding:10px;
+    }
 }
 
 @media(max-width:470px) {
@@ -483,11 +499,20 @@ footer {
     .footer_flexbox {
         padding-top: 25px;
     }
+    h3 {
+        font-size: 24px;
+    }
+    p{
+        font-size: 16px;
+    }
+    #dialogImage {
+        height: 65%;
+    }
 }
 
 @media(max-width:400px) {
     #datenschutz_h1 {
-        font-size: 32px;
+        font-size: 36px;
         text-align: center;
     }
     #dialogbox_caption {
@@ -526,10 +551,7 @@ footer {
     .impressum {
     padding: 20px 40px;
     }
-}
-
-@media(max-width:350px){
-    h3 {
-      font-size: 32px;  
+    #impressum_h1 {
+        font-size: 50px;
     }
 }
