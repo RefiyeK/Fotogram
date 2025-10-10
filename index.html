@@ -13,82 +13,77 @@
 <body onload="init()">
     
     <header>
-        <section class="header_container">    
-            
-            <a href="index.html" class="logo">
-                <img  src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo">
-            </a>
-                <a href="index.html" class="logo_small">
-                <img  src="./favicon/favicon.svg" alt="Fotogram Logo Small">
-            </a>
-        
-            <nav class="nav_link">
-                <a class="links" href="impressum.html">Impressum</a>
-                <a class="links" href="datenschutz.html">Datenschutz</a>
-            </nav>
-        </section>    
-        
-        
-        <div>
-            <h1>Galerie der Augenblicke</h1>
-        </div>
-        <div class="header_line"></div>
+            <section class="container_limit">    
+                <div class="logo">
+                    <a href="index.html">
+                        <img class="logo" src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo">
+                    
+                        </a>
+                </div>            
+            </section> 
     </header>
 
-    <main>
-        
-        <div id="galleryContainer"> 
-            
-        </div>
-
-        <dialog id="myDialog" class="dialogbox_modal" onclick="closeDialog()" aria-labelledby="dialogTitle" aria-describedby="dialogDescr" >
-                <div id="dialogbox_content" >
+    <main class="container_limit">
+        <section class="headline_gallery">
+            <div>
+                <h1>Galerie der Augenblicke</h1>
+            </div>
+                <div id="galleryContainer"> 
                     
-                    <button class="arrow-button arrow-left" onclick="previousImage()" aria-label="Vorheriges Bild">     
-                        <img class="arrow_left" src="./img/arrow-left.png" alt="">
-                    </button>    
-                    
-                        <img id="dialogImage" src="" alt="" class="dialog_image">    
-
-                    <button class="arrow-button arrow-right" onclick="nextImage()" aria-label="Nächstes Bild">
-                        <img class="arrow_right" src="./img/arrow-right.png" alt="">
-                    </button>
-                    
-                    <form method="dialog">
-                        <button class="close_button" onclick="closeDialog()" aria-label="Dialog schließen">&times;</button> 
-                    </form>
-                    <p id="dialogbox_caption"></p>
                 </div>
-        </dialog>
-    
-        
+
+                <dialog id="myDialog" class="dialogbox_modal" onclick="closeDialog()" aria-labelledby="dialogTitle" aria-describedby="dialogDescr" >
+                        <div id="dialogbox_content" >
+                            
+                            <button class="arrow-button arrow-left" onclick="previousImage()" aria-label="Vorheriges Bild">     
+                                <img class="arrow_left" src="./img/arrow-left.png" alt="">
+                            </button>    
+                            
+                                <img id="dialogImage" src="" alt="" class="dialog_image">    
+
+                            <button class="arrow-button arrow-right" onclick="nextImage()" aria-label="Nächstes Bild">
+                                <img class="arrow_right" src="./img/arrow-right.png" alt="">
+                            </button>
+                            
+                            <form method="dialog">
+                                <button class="close_button" onclick="closeDialog()" aria-label="Dialog schließen">&times;</button> 
+                            </form>
+                            <p id="dialogbox_caption"></p>
+                        </div>
+                </dialog>
+        </section>    
     </main>
  
 
-    <footer class="footer_container">
+    <footer >
       
-        
-                <a  href="index.html" class="logo">
-                    <img  src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo Footer">
-                </a>
+        <section class="container_limit">
+            <div class="footer_flexbox">
+                   
+                <div class="logos">
+                    <a class="logo_footer href="index.html" >
+                        <img class="logo_footer" src="./logo/Fotogram_Logo.svg" alt="Fotogram Logo Footer">
+                    </a>
+                    <a class="logo_small" href="index.html">
+                        <img class="logo_small" src="./favicon/favicon.svg" alt="Fotogram Logo Small">
+                    </a>
+                </div>    
+                    
+                <div class="footer_links">    
+                    <div class="links" >
+                        <a class="link" href="impressum.html">Impressum</a>
+                        <a class="link" href="datenschutz.html">Datenschutz</a>
+                    </div>    
 
-                <a href="index.html" class="logo_small">
-                   <img  src="./favicon/favicon.svg" alt="Fotogram Logo Small">
-                 </a>
-            
-            <div class="footer_links">    
-                <nav class="nav_link">
-                    <a class="links" href="impressum.html">Impressum</a>
-                    <a class="links" href="datenschutz.html">Datenschutz</a>
-                </nav>
-
-
-                <div class="social_media_group">
-                    <a href="https://facebook.com"><img class="social_media" src="./img/facebook_white.png" alt="Facebook Logo"></a>
-                    <a href="https://instagram.com"><img class="social_media" src="./img/instagram_white.png" alt="Instagram Logo"></a>
-                    <a href="https://x.com"><img class="social_media" src="./img/x-logo-white.png" alt="X Logo"></a>
-                </div>
-            </div>    
+                    <div class="social_media_group">
+                        <a href="https://facebook.com"><img class="social_media" src="./img/facebook_white.png" alt="Facebook Logo"></a>
+                        <a href="https://instagram.com"><img class="social_media" src="./img/instagram_white.png" alt="Instagram Logo"></a>
+                        <a href="https://x.com"><img class="social_media" src="./img/x-logo-white.png" alt="X Logo"></a>
+                    </div>
+                </div> 
+           
+            </div>
+        </section>   
     </footer>
    
 

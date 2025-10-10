@@ -1,8 +1,6 @@
 'use strict'
 
 
-
-//Variable als Array erstellen wo wir unsere Bilder speichen
 const MYIMAGES = [
     "img/art-hippie-van-flowers.jpg",         
     "img/nature-multnomah-waterfall.jpg",          
@@ -119,6 +117,7 @@ let currentImageIndex = 0;
 
 function init() {
     renderImage();
+    setupDialogEvents();
 }
 
 function renderImage() {
@@ -132,46 +131,47 @@ function renderImage() {
                  class="galleryContainer"
                  onclick="openDialog(${i})">
         `;
-    }
-    
+    }    
     container.innerHTML = imagesHTML;
 }
 
+function setupDialogEvents(){
+    document.getElementById('myDialog').onclick = function(event){
+        if(event.target === document.getElementById('myDialog')){
+            closeDialog();
+        }
+    }
+    document.addEventListener('keydown', handleKeyPress);
+}
+
 function openDialog(index) {
-    currentImageIndex = index;
-    
+    currentImageIndex = index; 
     document.getElementById('dialogImage').src = MYIMAGES[index];
     document.getElementById('dialogbox_caption').textContent = MYIMAGESCAPTION[index];
-    
     document.getElementById('myDialog').showModal();
 }
 
-// Klick auf Hintergrund schließt Dialog
-document.getElementById('myDialog').onclick = function(event) {
-    //Sucht das Dialog-Element mit der ID "myDialog" 
-    //Sagt: "Wenn auf dieses Element geklickt wird, dann..." Startet eine Funktion, die den Klick (event) bekommt
-
-        if (event.target === document.getElementById('myDialog')) {
-//"Ist diese Bedingung wahr?" 
-// Das Element, auf das tatsächlich geklickt wurde Ist es genau dasselbe Element?" 
-// Nochmal das Dialog-Element" Also: "Wurde genau auf das Dialog-Element selbst geklickt?"
-            closeDialog();
-        }
-
-    }
-
-
-
 function closeDialog() {
     document.getElementById('myDialog').close();
+    document.removeEventListener('keydown', handleKeyPress);
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'ArrowLeft') {
+        previousImage();
+    }
+    if (event.key === 'ArrowRight') {
+        nextImage();
+    }
+    if (event.key === 'Escape') {
+        closeDialog();
+    }
 }
 
 function nextImage() {
     if (currentImageIndex === MYIMAGES.length - 1) {
-        // Beim letzten Bild: gehe zurück zum ersten Bild (Index 0)
         currentImageIndex = 0;
     } else {
-        // Ansonsten: gehe zum nächsten Bild
         currentImageIndex = currentImageIndex + 1;
     }
     updateDialog();
@@ -179,10 +179,8 @@ function nextImage() {
 
 function previousImage() {
     if (currentImageIndex === 0) {
-        // Beim ersten Bild: gehe zum letzten Bild
         currentImageIndex = MYIMAGES.length - 1;
     } else {
-        // Ansonsten: gehe zum vorherigen Bild
         currentImageIndex = currentImageIndex - 1;
     }
     updateDialog();
